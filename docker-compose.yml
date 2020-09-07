@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+#   name of the service
+  app:
+    build:
+#      running app from root dir
+      context: .
+    ports:
+#      map the project to port 8000 on our host to port 8000 on our image
+      - "8000:8000"
+#      the volume allows us to get the updates that we make to our project
+    volumes:
+      - ./app:/app
+    command: >
+      sh -c "python manage.py runserver 0.0.0.0:8000"
