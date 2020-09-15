@@ -31,7 +31,7 @@ class PublicRecipeApiTest(TestCase):
     def setUp(self):
         self.client = APIClient()
 
-    def test_required_auth(self):
+    def test_auth_required(self):
         """Test that authentication is required"""
         res = self.client.get(RECIPES_URL)
 
